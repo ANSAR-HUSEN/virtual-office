@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>virtual office</h1>
+      <h1 className='text-6xl'>virtual office</h1>
     </>
   )
 }
