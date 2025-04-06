@@ -6,15 +6,15 @@ const Navbar = () => {
     <nav className="relative z-10  bg-transparent bg-opacity-80 text-white px-6 py-3 flex items-center justify-between shadow-md">
       {/* Logo placeholder */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="Logo" className='w-[100px]' />
+        <Link to={'/'}><img src={logo} alt="Logo" className='w-[100px]' /></Link>
       </div>
 
       {/* Navigation links */}
       <ul className="flex space-x-10 text-sm font-medium">
         <Link to={'/'}><li className="border-b-2 border-white pb-1">Home</li></Link>
         <Link to={'/feature'}><li className="hover:text-gray-300 cursor-pointer">Features</li></Link>
-        <li className="hover:text-gray-300 cursor-pointer">About Us</li>
-        <li className="hover:text-gray-300 cursor-pointer">Contact Us</li>
+        <Link to={'/about'} className="hover:text-gray-300 cursor-pointer">About Us</Link>
+        <Link to={'/contact'} className="hover:text-gray-300 cursor-pointer">Contact Us</Link>
       </ul>
 
       {/* Sign In button */}
