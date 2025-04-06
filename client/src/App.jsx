@@ -1,12 +1,28 @@
 import React, { useState } from 'react'
 import './App.css'
+import HomePage from './Home'
+import { Router, Route, Routes } from 'react-router-dom'
+import PricingPlans from './components/Feature'
+import { Well } from './components/Well'
+import { Auth } from './components/Auth'
+import { SetUp } from './components/SetUp'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='text-6xl'>virtual office</h1>
+      <Routes>
+        <Route path='/' element={<HomePage/>}>
+          <Route index element={<Well/>}/>
+          <Route path='feature' element={<PricingPlans/>}/>
+          <Route path='about' element={<HomePage/>}/>
+          <Route path='contact' element={<HomePage/>}/>
+          <Route path="auth" element={<Auth/>}/>
+          <Route path='setup' element={<SetUp/>}/>
+          <Route path='*' element={<h1>404 Not Found</h1>}/>
+        </Route>
+      </Routes>
     </>
   )
 }
