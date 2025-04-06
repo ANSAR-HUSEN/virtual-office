@@ -54,8 +54,8 @@ export const Input = ({
                   type="checkbox"
                   name="roles"
                   value={item?.name.toLowerCase()}
-                  onChange={(e) => setValue(e.target.value)}
-                  className="form-checkbox  h-5 w-5 text-blue-600"
+                  // onChange={(e) => setValue(e.target.value)}
+                  className="h-5 w-5 bg-white border border-amber-500 rounded-sm appearance-none checked:text-white checked:bg-amber-500"
                 />
               </label>
             );
@@ -69,7 +69,7 @@ export const Input = ({
               setValue("");
               setClick(true);
             }}
-            className="w-full text-xs px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+            className="w-full text-xs px-3 py-2 mt-1 border bg-white border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
           />
         ))}
     </div>

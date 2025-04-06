@@ -8,6 +8,7 @@ import { Auth } from "./components/Auth";
 import { SetUp } from "./components/SetUp";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import { Yearly } from "./components/Yearly";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="auth" element={<Auth />} />
           <Route path="setup" element={<SetUp />} />
+          <Route path="yearly" element={<Yearly/>} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Route>
       </Routes>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Input } from "./Input";
 import camera from "../assets/camera.png";
 
@@ -18,6 +18,8 @@ export const SetUp = ({ setIsValid }) => {
   const [companySizeError, setCompanySizeError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
+  const [logo, setLogo] = useState(null);
+  const fileInputRef = useRef(null);
 
   const handleSubmit = () => {
     // Reset errors
@@ -80,6 +82,18 @@ export const SetUp = ({ setIsValid }) => {
     }
   };
 
+  const handleDivClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const imageUrl = URL.createObjectURL(file);
+    setLogo(imageUrl);
+  };
+
   return (
     <div className="relative z-10 my-10 flex justify-center items-center px-4">
       <div className="bg-white opacity-80 p-6 rounded-md w-[400px] max-w-md shadow-lg">
@@ -87,8 +101,17 @@ export const SetUp = ({ setIsValid }) => {
           Set Up Your Office
         </h2>
         <div className="w-full flex justify-center relative">
-          <div className="flex justify-center items-center h-[100px] w-[100px] rounded-full bg-blue-950 text-white">
-            <h3>Logo here</h3>
+          <div className=" relative flex justify-center items-center h-[100px] w-[100px] rounded-full bg-blue-950 text-white bg-cover bg-center cursor-pointer" onClick={handleDivClick} style={{
+        backgroundImage: logo ? `url(${logo})` : 'none',
+      }}>
+          <input
+            type="file"
+            accept="image/*"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            className="hidden"
+          />
+          {!logo && <h3  className="text-white">Logo here</h3>}
             <div className="absolute -bottom-2 bg-amber-500 rounded-full p-1">
               <img src={camera} alt="camera" className="w-5 text-white" />
             </div>
