@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Input } from "./Input";
-import camera from '../assets/camera.png';
+import camera from "../assets/camera.png";
 
 export const SetUp = ({ setIsValid }) => {
   const [name, setName] = useState("");
@@ -83,7 +83,9 @@ export const SetUp = ({ setIsValid }) => {
   return (
     <div className="relative z-10 my-10 flex justify-center items-center px-4">
       <div className="bg-white opacity-80 p-6 rounded-md w-[400px] max-w-md shadow-lg">
-        <h2 className="text-center text-md font-semibold mb-4">Set Up Your Office</h2>
+        <h2 className="text-center text-md font-semibold mb-4">
+          Set Up Your Office
+        </h2>
         <div className="w-full flex justify-center relative">
           <div className="flex justify-center items-center h-[100px] w-[100px] rounded-full bg-blue-950 text-white">
             <h3>Logo here</h3>
